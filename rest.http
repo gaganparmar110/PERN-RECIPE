@@ -1,0 +1,9 @@
+get http://localhost:8000/ViewRecipe/2
+Content-Type: application/json
+{
+         "recipe_title" : "golgappe",
+         "recipe_ingridients" : "potato etc",
+         "recipe_process" : "abcccccc",
+         "recipe_picture" : "c://fakepath/abc.jpg",
+         "recipe_cook" : "chef krati"
+}
