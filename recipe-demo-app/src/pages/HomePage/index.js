@@ -78,7 +78,7 @@ export default class HomePage extends React.PureComponent{
             <Header />
             <Carousel />
             <HeaderStyled>
-              <HeadingStyled>Having A Recipe</HeadingStyled>
+              <HeadingStyled>Having AA Recipe</HeadingStyled>
               <ParaStyled>Then Show Your Talent With us.</ParaStyled>
             </HeaderStyled>
             <ContainerStyled className="container">
