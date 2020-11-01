@@ -2,7 +2,9 @@ const Express = require('express');
 const Cors = require('cors');
 const pool = require('./db');
 const multer = require('multer');
+const path = require("path");
 //const upload =  multer({dest : 'uploads/'});
+const PORT = process.env.PORT || 8000;
 
 const app = Express();
 
@@ -11,7 +13,11 @@ const app = Express();
 app.use(Cors());
 app.use(Express.json());
 app.use(Express.static('uploads'));
-
+app.use(Express.static("./recipe-demo-app/build"));
+if(process.env.NODE_ENV === "production"){
+    app.use(Express.static(path.join(__dirname,"recipe-demo-app/build")));
+}
+console.log("dirname:",__dirname);
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, './uploads')
@@ -91,6 +97,11 @@ app.put("/ViewRecipe/:recipe_id",async (req,res)=>{
         console.error(err.message);
     }
 });
-app.listen(8000,()=>{
-    console.log('server is running on port 8000');
+
+app.get("*", (req,res)=>{
+    res.sendFile(path.join(__dirname,"recipe-demo-app/build/index.html"));
+});
+
+app.listen(PORT,()=>{
+    console.log(`server is running on port ${PORT}`);
 });

@@ -66,7 +66,7 @@ export default class ViewRecipePage extends React.PureComponent{
        }
 
 componentDidMount(){
-    axios.get('http://localhost:8000/ViewRecipe')
+    axios.get('/ViewRecipe')
     .then(res => {
         const listData = res.data;
         console.log(listData);

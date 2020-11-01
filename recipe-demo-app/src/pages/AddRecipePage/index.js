@@ -121,7 +121,10 @@ export default class AddRecipePage extends React.PureComponent{
       //[ recipeList.recipe_title,recipeList.recipe_ingredients,recipeList.recipe_process,recipeList.recipe_picture,recipeList.recipe_cook ]
       console.log(recipeList);
       console.log(formData);
-      axios.post("http://localhost:8000/AddRecipe",formData,config)
+
+      //proxy
+
+      axios.post("/AddRecipe",formData,config)
       .then(res =>{
         console.log(res.data);
       })
