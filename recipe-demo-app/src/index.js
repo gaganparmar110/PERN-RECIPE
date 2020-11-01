@@ -15,7 +15,7 @@ class RouteComponents extends React.PureComponent{
              <Router>
                  <Switch>
                      <Route exact path="/" component={HomePage}></Route>
-                     <Route path="/ViewRecipe" component={ViewRecipePage}></Route>
+                     <Route exact path="/ViewRecipe" component={ViewRecipePage}></Route>
                      <Route path="/AddRecipe" component={AddRecipePage}></Route>
                      <Route path="/About" component={AboutPage}></Route>
                      <Route path="/Contact" component={ContactPage}></Route>
