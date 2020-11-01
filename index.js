@@ -98,9 +98,9 @@ app.put("/ViewRecipe/:recipe_id",async (req,res)=>{
     }
 });
 
-// app.get("*", (req,res)=>{
-//     res.sendFile(path.join(__dirname,"recipe-demo-app/build/index.html"));
-// });
+app.get("*", (req,res)=>{
+    res.sendFile(path.join(__dirname,"recipe-demo-app/build/index.html"));
+});
 
 app.listen(PORT,()=>{
     console.log(`server is running on port ${PORT}`);
