@@ -13,7 +13,7 @@ const app = Express();
 app.use(Cors());
 app.use(Express.json());
 app.use(Express.static('uploads'));
-// app.use(Express.static("./recipe-demo-app/build"));
+app.use(Express.static("./recipe-demo-app/build"));
 if(process.env.NODE_ENV === "production"){
     app.use(Express.static(path.join(__dirname,"recipe-demo-app/build")));
 }
