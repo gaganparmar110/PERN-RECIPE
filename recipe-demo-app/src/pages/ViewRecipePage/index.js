@@ -65,8 +65,8 @@ export default class ViewRecipePage extends React.PureComponent{
        }
 
 componentDidMount(){
-    axios.get('/ViewRecipe')
-    .then(res => {
+    axios.get('/ViewRecipe').then(res => {
+        console.log("res: ",res);
         const listData = res.data;
         console.log(listData);
         this.setState({dataList: listData

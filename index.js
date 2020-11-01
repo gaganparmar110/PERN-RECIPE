@@ -67,7 +67,7 @@ app.get("/ViewRecipe", async (req,res)=>{
         const allRecipe = await pool.query(
             "select * from public.recipe_lists"
            );
-    //  res.json(allRecipe.rows);
+     res.json(allRecipe.rows);
        } catch (err) {
           console.error(err.message);
        }
