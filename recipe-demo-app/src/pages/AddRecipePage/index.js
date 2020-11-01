@@ -159,7 +159,7 @@ export default class AddRecipePage extends React.PureComponent{
         <FormLableStyled htmlFor="Title">Recipe Ingredients :</FormLableStyled>
       </FormLableColumnStyled>
       <FormInputColumnStyled>
-        <input type="text" id="ingredients" name="recipeIngredients" placeholder="Enter Ingredientd which separated by comma.." onChange={this.handleChange}value={this.state.recipeIngredients} />
+        <input type="text" id="ingredients" name="recipeIngredients" placeholder="Enter Ingredients which separated by comma.." onChange={this.handleChange}value={this.state.recipeIngredients} />
       </FormInputColumnStyled>
     </FormRowStyled>
     <FormRowStyled>
