@@ -66,15 +66,11 @@ export default class ViewRecipePage extends React.PureComponent{
 
 componentDidMount(){
     axios.get('/ViewRecipe').then(res => {
+        console.log("work: ");
         console.log("res: ",res);
         const listData = res.data;
         console.log(listData);
-        this.setState({dataList: listData
-                //    recipeTitle:listData.RecipeTitle,
-                //    recipeIngredients:listData.RecipeIngredients,
-                //    recipePicture:listData.RecipePicture,
-                //    cookName:listData.CookName,
-        });
+        this.setState({dataList: listData});
         // for (let index = 0; index < this.state.dataList.length; index++) {
 
         //     let element = this.state.dataList[index].recipe_picture.split("\\");
@@ -282,7 +278,7 @@ componentDidMount(){
          <ContainerStyled className="container mt-4">
             <RowStyled className="row justify-content-center">
                 {this.state.dataList.map((data1)=>
-                             <ColumnStyled className="col-md-4 col-12" key={data1.id}>
+                             <ColumnStyled className="col-md-4 col-12" key={data1.recipe_id}>
                              <CardStyled className="card">
                                  <CardImageStyled className="img-animation">
                                      <ImageStyled src="../../assets/download5.jpg" className="card-img-top" />

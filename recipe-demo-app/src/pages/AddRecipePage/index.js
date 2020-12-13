@@ -126,7 +126,9 @@ export default class AddRecipePage extends React.PureComponent{
 
       axios.post("/AddRecipe",formData,config)
       .then(res =>{
-        console.log(res.data);
+        console.log("post work");
+        console.log("res:",res.data);
+        console.log("res:",res);
       })
       .catch(error =>{
              console.log(error);

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import ViewRecipePage from '../../pages/ViewRecipePage';
 
 const NavStyled=styled.nav`
    background-color:green;
@@ -42,7 +43,21 @@ background: #f1f1f1;
 `;
 
 export default class Header extends React.PureComponent{
+    constructor(props){
+        super(props);
+        this.state={
+            showViewPage:false
+        }
+        this.displayView=this.displayView.bind(this);
+    }
+
+    displayView() {
+        this.setState({showViewPage:true});
+    }
     render(){
+        if(this.state.showViewPage) {
+            return <ViewRecipePage />
+        }
         return(
             <>
              <NavStyled className="navbar navbar-expand-md navbar-dark fixed-top">
@@ -59,7 +74,7 @@ export default class Header extends React.PureComponent{
                           <a href="/" className="nav-link">Home</a>
                       </li>
                       <li className="nav-item ">
-                          <a href="/ViewRecipe" className="nav-link">ViewRecipe</a>
+                          <a href="/ViewRecipe" className="nav-link" onClick={this.displayView}>ViewRecipe</a>
                       </li>
                       <li className="nav-item ">
                           <a href="/AddRecipe" className="nav-link">AddRecipe</a>

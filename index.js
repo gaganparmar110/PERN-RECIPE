@@ -33,6 +33,7 @@ const upload = multer({
 //create recipe
 app.post("/AddRecipe", upload.single('recipe_picture'),async (req,res)=>{
     console.log("first",req.body);
+    console.log("first1",req);
     try {
     //     if (req.file)
     //     res.json({
